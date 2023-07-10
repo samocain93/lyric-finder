@@ -5,15 +5,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Index from './components/layout/Index';
 
+import Provider from './context';
+
 function App() {
   return (
     <div className='app'>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Index />} />
-        </Routes>
-      </Router>
+      <Provider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Index />} />
+          </Routes>
+        </Router>
+      </Provider>
     </div>
   );
 }
